@@ -17,7 +17,7 @@
 
         /* Header */
         header {
-            background: linear-gradient(90deg, #FFC300,  #581845); /* Rich blue gradient */
+            background: linear-gradient(90deg, #FFC300, #581845); /* Rich blue gradient */
             color: white;
             text-align: center;
             padding: 40px 0;
@@ -57,7 +57,7 @@
         }
 
         h1, h2, h3 {
-            color:  #581845; /* Primary dark blue */
+            color: #581845; /* Primary dark blue */
             margin-bottom: 15px;
         }
 
@@ -83,44 +83,35 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .project img {
-            margin-top: 15px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .project img.inline {
-            display: inline-block;
-            margin-right: 10px;
-            width: calc(50% - 10px); /* Equal width for two images */
-        }
-
-        .project img.block {
-            display: block;
-            margin: 10px auto; /* Center the images */
-            max-width: 100%; /* Ensure they fit within the container */
-            border-radius: 10px;
-        }
-
-        .flex-container {
+        .project .flex-container {
             display: flex; /* Enables flex layout */
-            gap: 10px; /* Adds space between images */
-            flex-wrap: wrap; /* Ensures responsiveness */
+            justify-content: flex-start; /* Aligns items horizontally */
+            gap: 10px; /* Space between images */
         }
-        
-        .flex-container img {
-            width: calc(50% - 5px); /* Each image takes half the width minus the gap */
+
+        .project .flex-container img {
+            flex: 1; /* Ensures images share available space equally */
+            max-width: 48%; /* Each image occupies roughly half the width of the container */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project a {
+            color: #FFC300; /* Bright blue links */
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            color: #581845; /* Darker blue on hover */
+            text-decoration: underline;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background:  #581845;
+            background: #581845;
             color: white;
         }
 
@@ -134,19 +125,35 @@
             text-decoration: underline;
         }
 
+        /* Buttons (Optional) */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #FFC300;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #581845;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
 
-            .project {
-                padding: 15px;
+            .project .flex-container {
+                flex-direction: column;
             }
 
-            .project img.inline {
-                width: 100%; /* Stack images vertically on small screens */
-                margin-bottom: 15px;
+            .project .flex-container img {
+                max-width: 100%; /* Images stack vertically */
             }
         }
 
@@ -194,14 +201,7 @@
 <section>
     <h1>About Me</h1>
     <p>Hello! I am a passionate software developer with over three years of expertise in Java and Android development. 
-        Holding a Distinction in MSc Computing, I thrive in agile, inclusive environments that foster innovation and collaboration. 
-        My international internship in the UK and diverse professional experience spanning fintech, life sciences, ERP, and e-commerce 
-        have honed my adaptability and cross-functional teamwork skills.</p>
-        
-    <p>From designing APIs to automating unit tests, I specialize in crafting impactful solutions that seamlessly merge technical precision with business value. 
-    My dedication to problem-solving and continuous learning fuels my drive to tackle complex challenges and contribute to forward-thinking teams. 
-    With a blend of creativity, technical expertise, and a global perspective, I’m excited to create meaningful technology that drives success.</p> 
-        
+        Holding a Distinction in MSc Computing, I thrive in agile, inclusive environments that foster innovation and collaboration.</p>
     <p>Below are some of the projects I have worked on. Feel free to explore!</p>
 
     <h2>Projects</h2>
