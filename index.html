@@ -104,6 +104,18 @@
             border-radius: 10px;
         }
 
+        .flex-container {
+            display: flex; /* Enables flex layout */
+            gap: 10px; /* Adds space between images */
+            flex-wrap: wrap; /* Ensures responsiveness */
+        }
+        
+        .flex-container img {
+            width: calc(50% - 5px); /* Each image takes half the width minus the gap */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -196,8 +208,10 @@
     <div class="project">
         <h3><a href="https://github.com/Dilangi/Northampton_Travels">Project 1: Northampton_Travels (Android App using Kotlin)</a></h3>
         <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements.</p>
-        <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot" class="block">
-        <img src="./img/p1s2.png" alt="Northampton Travels Android App Screenshot 2" class="block">
+        <div class="flex-container">
+            <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot">
+            <img src="./img/p1s2.png" alt="Northampton Travels Android App Screenshot 2">
+        </div>
     </div>
 
     <div class="project">
