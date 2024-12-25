@@ -91,15 +91,10 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .project a {
-            color: #FFC300; /* Bright blue links */
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .project a:hover {
-            color:  #581845; /* Darker blue on hover */
-            text-decoration: underline;
+        .project img.inline {
+            display: inline-block;
+            margin-right: 10px;
+            width: calc(50% - 10px); /* Equal width for two images */
         }
 
         /* Footer */
@@ -120,23 +115,6 @@
             text-decoration: underline;
         }
 
-        /* Buttons (Optional) */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #FFC300;
-            color: white; /* Set text color to white */
-            text-transform: uppercase;
-            font-weight: 600;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #581845; /* Change background color on hover */
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             header h1 {
@@ -145,6 +123,11 @@
 
             .project {
                 padding: 15px;
+            }
+
+            .project img.inline {
+                width: 100%; /* Stack images vertically on small screens */
+                margin-bottom: 15px;
             }
         }
 
@@ -196,38 +179,37 @@
         My international internship in the UK and diverse professional experience spanning fintech, life sciences, ERP, and e-commerce 
         have honed my adaptability and cross-functional teamwork skills.</p>
         
-        <p>From designing APIs to automating unit tests, I specialize in crafting impactful solutions that seamlessly merge technical precision with business value. 
-        My dedication to problem-solving and continuous learning fuels my drive to tackle complex challenges and contribute to forward-thinking teams. 
-        With a blend of creativity, technical expertise, and a global perspective, I’m excited to create meaningful technology that drives success.</p> 
+    <p>From designing APIs to automating unit tests, I specialize in crafting impactful solutions that seamlessly merge technical precision with business value. 
+    My dedication to problem-solving and continuous learning fuels my drive to tackle complex challenges and contribute to forward-thinking teams. 
+    With a blend of creativity, technical expertise, and a global perspective, I’m excited to create meaningful technology that drives success.</p> 
         
-        <p>Below are some of the projects I have worked on. Feel free to explore!</p>
+    <p>Below are some of the projects I have worked on. Feel free to explore!</p>
 
     <h2>Projects</h2>
     <div class="project">
-        <h3>Project 1: Northampton_Travels (Android App using Kotlin)</h3>
+        <h3><a href="https://github.com/Dilangi/Northampton_Travels">Project 1: Northampton_Travels (Android App using Kotlin)</a></h3>
         <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements.</p>
-        <a href="https://github.com/Dilangi/Northampton_Travels" class="btn">View on GitHub</a>
-        <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot">
+        <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot" class="inline">
+        <img src="./img/p1s2.png" alt="Northampton Travels Android App Screenshot 2" class="inline">
     </div>
 
     <div class="project">
-        <h3>Project 2: Northampton_Travels (Responsive Web App using HTML, JS, CSS, and PHP)</h3>
+        <h3><a href="https://github.com/Dilangi/northampton_travels-web_config">Project 2: Northampton_Travels (Responsive Web App using HTML, JS, CSS, and PHP)</a></h3>
         <p>This project is the web application counterpart to Project 1. The application was developed with similar interfaces and features for a consistent user experience.</p>
-        <a href="https://github.com/Dilangi/northampton_travels-web_config" class="btn">View on GitHub</a>
-        <img src="./img/p2s1.png" alt="Northampton Travels Web App Screenshot">
+        <img src="./img/p2s1.png" alt="Northampton Travels Web App Screenshot" class="inline">
+        <img src="./img/p2s2.png" alt="Northampton Travels Web App Screenshot" class="inline">
     </div>
 
     <div class="project">
-        <h3>Project 3: Property Rental Agency Management Application (Standalone Application using JavaFX)</h3>
+        <h3><a href="https://github.com/Dilangi/PropertyRental">Project 3: Property Rental Agency Management Application (Standalone Application using JavaFX)</a></h3>
         <p>This application is designed for rental agents to manage the rental process. The system was developed using the agile approach and adheres to the MVC architecture for better readability.</p>
-        <a href="https://github.com/Dilangi/PropertyRental" class="btn">View on GitHub</a>
-        <img src="./img/p3s1.png" alt="Property Rental Agency Management Application Screenshot">
+        <img src="./img/p3s1.png" alt="Property Rental Agency Management Application Screenshot" class="inline">
+        <img src="./img/p3s2.png" alt="Property Rental Agency Management Application Screenshot 2" class="inline">
     </div>
 
     <div class="project">
-        <h3>Project 4: TicketME (Mobile App using Ionic, AngularJS, Firebase, HTML, CSS, JS)</h3>
+        <h3><a href="https://github.com/Dilangi/TicketMe">Project 4: TicketME (Mobile App using Ionic, AngularJS, Firebase, HTML, CSS, JS)</a></h3>
         <p>TicketME is a mobile app designed to facilitate the purchase of travel passes through QR codes, eliminating the need to visit a railway station to buy a ticket.</p>
-        <a href="https://github.com/Dilangi/TicketMe" class="btn">View on GitHub</a>
     </div>
 </section>
 
