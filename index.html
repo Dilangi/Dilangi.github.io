@@ -4,54 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dilangi Thilakarathna - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h1 {
-            font-size: 2.5em;
+            background-color: #f8f9fa;
             color: #333;
         }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #0073e6, #003580);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Section */
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            color: #003580;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Projects */
         .project {
-            background-color: white;
+            background: white;
             margin: 20px 0;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .project a {
-            color: #0073e6;
-            text-decoration: none;
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
+
         .project img {
             margin-top: 15px;
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .project a {
+            color: #0073e6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background: #003580;
             color: white;
         }
+
         footer a {
-            color: #0073e6;
+            color: #ffcc00;
             text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .project {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -68,18 +122,7 @@
     <h2>Projects</h2>
     <div class="project">
         <h3>Project 1: Northampton_Travels (Android App using Kotlin)</h3>
-        <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements. It includes features like:</p>
-        <ul>
-            <li>Signup</li>
-            <li>Login and Logout</li>
-            <li>User Profile</li>
-            <li>CRUD Reviews</li>
-            <li>Like/Dislike Reviews and Undo Action</li>
-            <li>Filter Review</li>
-            <li>Page Navigation</li>
-            <li>Notifications</li>
-            <li>Language Translation</li>
-        </ul>
+        <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements.</p>
         <a href="https://github.com/Dilangi/Northampton_Travels">View on GitHub</a>
         <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot">
     </div>
@@ -93,25 +136,14 @@
 
     <div class="project">
         <h3>Project 3: Property Rental Agency Management Application (Standalone Application using JavaFX)</h3>
-        <p>This application is designed for rental agents to manage the rental process. The system was developed using the agile approach and adheres to the MVC architecture for better readability. Key features include OOP concepts, Singleton and Adapter design patterns, and exception handling.</p>
+        <p>This application is designed for rental agents to manage the rental process. The system was developed using the agile approach and adheres to the MVC architecture for better readability.</p>
         <a href="https://github.com/Dilangi/PropertyRental">View on GitHub</a>
-        <img src="../img/p3s1.png" alt="Property Rental Agency Management Application Screenshot">
+        <img src="./img/p3s1.png" alt="Property Rental Agency Management Application Screenshot">
     </div>
 
     <div class="project">
         <h3>Project 4: TicketME (Mobile App using Ionic, AngularJS, Firebase, HTML, CSS, JS)</h3>
-        <p>TicketME is a mobile app designed to facilitate the purchase of travel passes through QR codes, eliminating the need to visit a railway station to buy a ticket. Key features include:</p>
-        <ul>
-            <li>Signup and Login</li>
-            <li>Manage Travelling Details</li>
-            <li>Generate and Scan QR</li>
-            <li>Manage User Profile</li>
-            <li>Display Train Schedule</li>
-            <li>Display Ticket List</li>
-            <li>Generate Ticket Price</li>
-            <li>Request for Railcard</li>
-            <li>Add Payment Details</li>
-        </ul>
+        <p>TicketME is a mobile app designed to facilitate the purchase of travel passes through QR codes, eliminating the need to visit a railway station to buy a ticket.</p>
         <a href="https://github.com/Dilangi/TicketMe">View on GitHub</a>
     </div>
 </section>
