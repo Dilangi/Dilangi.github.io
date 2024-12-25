@@ -4,29 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dilangi Thilakarathna - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Styling */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f5f7fa; /* Light gray background */
+            color: #333; /* Dark gray text */
         }
 
         /* Header */
         header {
-            background: linear-gradient(90deg, #0073e6, #003580);
+            background: linear-gradient(90deg, #1E90FF, #004AAD); /* Rich blue gradient */
             color: white;
             text-align: center;
-            padding: 30px 0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 40px 0;
+            position: relative;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #FFD700; /* Gold border */
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: fadeIn 2s ease-in-out; /* Logo animation */
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            margin: 100px 0 10px; /* Adjust margin to fit logo */
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: slideInFromBottom 1.5s ease-in-out; /* Slide-in text animation */
+        }
+
+        header p {
+            animation: fadeIn 2.5s ease-in-out;
         }
 
         /* Section */
@@ -37,28 +57,30 @@
         }
 
         h1, h2, h3 {
-            color: #003580;
+            color: #004AAD; /* Primary dark blue */
             margin-bottom: 15px;
         }
 
         p {
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        /* Projects */
+        /* Project Cards */
         .project {
             background: white;
             margin: 20px 0;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #FFD700; /* Gold accent border */
+            animation: fadeInUp 1.5s ease-in-out; /* Animation for projects */
         }
 
         .project:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
 
         .project img {
@@ -70,12 +92,13 @@
         }
 
         .project a {
-            color: #0073e6;
-            font-weight: 600;
+            color: #1E90FF; /* Bright blue links */
+            font-weight: 500;
             text-decoration: none;
         }
 
         .project a:hover {
+            color: #004AAD; /* Darker blue on hover */
             text-decoration: underline;
         }
 
@@ -83,18 +106,35 @@
         footer {
             text-align: center;
             padding: 20px;
-            background: #003580;
+            background: #004AAD;
             color: white;
         }
 
         footer a {
-            color: #ffcc00;
+            color: #FFD700; /* Gold for footer links */
             text-decoration: none;
             font-weight: 600;
         }
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Buttons (Optional) */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1E90FF;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #004AAD;
         }
 
         /* Responsive Design */
@@ -107,44 +147,87 @@
                 padding: 15px;
             }
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Dilangi Thilakarathna - Portfolio</h1>
+    <img src="./img/Dilangi.jpeg" alt="Photo ID">
+    <h1>Dilangi Thilakarathna</h1>
+    <p>Software Engineer | Java Developer | Creative Problem Solver</p>
 </header>
 
 <section>
     <h1>About Me</h1>
-    <p>Hello! I'm a Software Engineer with a background in Java development. Below are some of the projects I have worked on. Feel free to explore!</p>
+    <p>Hello! I am a passionate software developer with over three years of expertise in Java and Android development. 
+        Holding a Distinction in MSc Computing, I thrive in agile, inclusive environments that foster innovation and collaboration. 
+        My international internship in the UK and diverse professional experience spanning fintech, life sciences, ERP, and e-commerce 
+        have honed my adaptability and cross-functional teamwork skills.</p>
+        
+        <p>From designing APIs to automating unit tests, I specialize in crafting impactful solutions that seamlessly merge technical precision with business value. 
+        My dedication to problem-solving and continuous learning fuels my drive to tackle complex challenges and contribute to forward-thinking teams. 
+        With a blend of creativity, technical expertise, and a global perspective, I’m excited to create meaningful technology that drives success.</p> 
+        
+        <p>Below are some of the projects I have worked on. Feel free to explore!</p>
 
     <h2>Projects</h2>
     <div class="project">
         <h3>Project 1: Northampton_Travels (Android App using Kotlin)</h3>
         <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements.</p>
-        <a href="https://github.com/Dilangi/Northampton_Travels">View on GitHub</a>
+        <a href="https://github.com/Dilangi/Northampton_Travels" class="btn">View on GitHub</a>
         <img src="./img/p1s1.png" alt="Northampton Travels Android App Screenshot">
     </div>
 
     <div class="project">
         <h3>Project 2: Northampton_Travels (Responsive Web App using HTML, JS, CSS, and PHP)</h3>
         <p>This project is the web application counterpart to Project 1. The application was developed with similar interfaces and features for a consistent user experience.</p>
-        <a href="https://github.com/Dilangi/northampton_travels-web_config">View on GitHub</a>
+        <a href="https://github.com/Dilangi/northampton_travels-web_config" class="btn">View on GitHub</a>
         <img src="./img/p2s1.png" alt="Northampton Travels Web App Screenshot">
     </div>
 
     <div class="project">
         <h3>Project 3: Property Rental Agency Management Application (Standalone Application using JavaFX)</h3>
         <p>This application is designed for rental agents to manage the rental process. The system was developed using the agile approach and adheres to the MVC architecture for better readability.</p>
-        <a href="https://github.com/Dilangi/PropertyRental">View on GitHub</a>
+        <a href="https://github.com/Dilangi/PropertyRental" class="btn">View on GitHub</a>
         <img src="./img/p3s1.png" alt="Property Rental Agency Management Application Screenshot">
     </div>
 
     <div class="project">
         <h3>Project 4: TicketME (Mobile App using Ionic, AngularJS, Firebase, HTML, CSS, JS)</h3>
         <p>TicketME is a mobile app designed to facilitate the purchase of travel passes through QR codes, eliminating the need to visit a railway station to buy a ticket.</p>
-        <a href="https://github.com/Dilangi/TicketMe">View on GitHub</a>
+        <a href="https://github.com/Dilangi/TicketMe" class="btn">View on GitHub</a>
     </div>
 </section>
 
