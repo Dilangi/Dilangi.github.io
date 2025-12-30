@@ -3,221 +3,459 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dilangi Thilakarathna - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Dilangi Thilakarathna - Software Engineer</title>
     <style>
-        /* General Styling */
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa; /* Light gray background */
-            color: #333; /* Dark gray text */
+            box-sizing: border-box;
         }
-
-        /* Header */
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         header {
-            background: linear-gradient(90deg, #FFC300,  #581845); /* Rich blue gradient */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
+            padding: 80px 0;
             text-align: center;
-            padding: 40px 0;
-            position: relative;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
-
-        header img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid #FFD700; /* Gold border */
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: fadeIn 2s ease-in-out; /* Logo animation */
-        }
-
+        
         header h1 {
-            margin: 100px 0 10px; /* Adjust margin to fit logo */
-            font-size: 2.8em;
+            font-size: 3em;
+            margin-bottom: 10px;
             font-weight: 700;
-            letter-spacing: 1px;
-            animation: slideInFromBottom 1.5s ease-in-out; /* Slide-in text animation */
         }
-
+        
         header p {
-            animation: fadeIn 2.5s ease-in-out;
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
-
-        /* Section */
-        section {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
+        
+        .links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-
-        h1, h2, h3 {
-            color:  #581845; /* Primary dark blue */
-            margin-bottom: 15px;
-        }
-
-        p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        /* Project Cards */
-        .project {
-            background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 5px solid #FFD700; /* Gold accent border */
-            animation: fadeInUp 1.5s ease-in-out; /* Animation for projects */
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .project img {
-            margin-top: 15px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .project a {
-            color: #FFC300; /* Bright blue links */
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .project a:hover {
-            color:  #581845; /* Darker blue on hover */
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background:  #581845;
+        
+        .links a {
             color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
         }
-
-        footer a {
-            color: #FFD700; /* Gold for footer links */
+        
+        .links a:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        section {
+            padding: 60px 0;
+            background: white;
+            margin: 40px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            color: #667eea;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .skill-category {
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            color: #555;
+        }
+        
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .projects-grid {
+            display: grid;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #764ba2;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .project-card h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .project-card ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .project-card li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        
+        .project-links {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-links a {
+            color: #667eea;
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        
+        .project-links a:hover {
+            color: #764ba2;
         }
-
-        /* Responsive Design */
+        
+        .experience-timeline {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        
+        .experience-item {
+            padding: 25px;
+            background: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .company {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+        
+        .experience-item li {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .cert-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .cert-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
-
-            .project {
-                padding: 15px;
+            
+            header p {
+                font-size: 1.1em;
             }
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInFromBottom {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>Dilangi Thilakarathna</h1>
+            <p>Software Engineer | Java • Spring Boot • AWS • Cloud</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/dilangi-thilakarathne" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Dilangi" target="_blank">GitHub</a>
+                <a href="mailto:dilangithilakarathne@gmail.com">Email Me</a>
+                <a href="Dilangi_Thilakarathna_CV.pdf" target="_blank">Download CV</a>
+            </div>
+        </div>
+    </header>
 
-<header>
-    <img src="./img/Dilangi.jpeg" alt="Photo ID">
-    <h1>Dilangi Thilakarathna</h1>
-    <p>Software Engineer | Java Developer | Creative Problem Solver</p>
-</header>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>I'm a Software Engineer with 3+ years of professional experience in backend development, mobile applications, and cloud infrastructure. I hold an MSc in Computing with Distinction from the University of Northampton, where I completed a 12-month industry placement working with AWS, CI/CD pipelines, and data analytics.</p>
+                
+                <p style="margin-top: 20px;">My expertise spans Java/Spring Boot development, RESTful API design, and cloud technologies. I'm passionate about building scalable, secure backend systems and continuously expanding my technical skills. Recently earned AWS Certified Cloud Practitioner certification and actively developing microservices projects.</p>
+                
+                <p style="margin-top: 20px;">Currently based in Bristol, UK, and seeking opportunities in backend or cloud engineering roles where I can contribute to innovative teams building modern software solutions.</p>
+            </div>
+        </section>
 
-<section>
-    <h1>About Me</h1>
-    <p>Hello! I am a passionate software developer with over three years of expertise in Java and Android development. 
-        Holding a Distinction in MSc Computing, I thrive in agile, inclusive environments that foster innovation and collaboration. 
-        My international internship in the UK and diverse professional experience spanning fintech, life sciences, ERP, and e-commerce 
-        have honed my adaptability and cross-functional teamwork skills.</p>
-        
-        <p>From designing APIs to automating unit tests, I specialize in crafting impactful solutions that seamlessly merge technical precision with business value. 
-        My dedication to problem-solving and continuous learning fuels my drive to tackle complex challenges and contribute to forward-thinking teams. 
-        With a blend of creativity, technical expertise, and a global perspective, I’m excited to create meaningful technology that drives success.</p> 
-        
-        <p>Below are some of the projects I have worked on. Feel free to explore!</p>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend & Languages</h3>
+                    <ul>
+                        <li>Java & Spring Boot</li>
+                        <li>RESTful APIs</li>
+                        <li>Microservices</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Cloud & DevOps</h3>
+                    <ul>
+                        <li>AWS (EC2, S3, RDS, Lambda, DynamoDB)</li>
+                        <li>Docker & Kubernetes</li>
+                        <li>CI/CD (Jenkins, GitHub Actions)</li>
+                        <li>Terraform</li>
+                        <li>CloudWatch</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul>
+                        <li>MySQL</li>
+                        <li>DynamoDB</li>
+                        <li>SQLite</li>
+                        <li>Firebase</li>
+                        <li>Snowflake</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Development Practices</h3>
+                    <ul>
+                        <li>OOP & Design Patterns</li>
+                        <li>Test-Driven Development</li>
+                        <li>Unit Testing (JUnit, Mockito)</li>
+                        <li>Agile Methodologies</li>
+                        <li>Code Review</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <h2>Projects</h2>
-    <div class="project">
-        <h3><a href="https://github.com/Dilangi/Northampton_Travels">Project 1: Northampton_Travels (Android App using Kotlin)</a></h3>
-        <p>This project is an Android application that is responsive for both mobile and web platforms using Kotlin and native web development approaches. The project followed OOP concepts, black box testing, error handling, and improvements.</p>
-        <img src="./img/P1.png" alt="Northampton Travels Android App Screenshot">
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Spring Boot Microservices API with Authentication</h3>
+                    <p>A production-ready RESTful API demonstrating secure user authentication and comprehensive CRUD operations.</p>
+                    <ul>
+                        <li>Implemented JWT-based authentication with bearer token validation</li>
+                        <li>Built complete user management system with signup, login, and CRUD operations</li>
+                        <li>Integrated MySQL database with proper entity relationships</li>
+                        <li>Exception handling for authentication flows and error responses</li>
+                        <li>Ongoing: Role-based access control and comprehensive test coverage</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java 17</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/Dilangi/Spring-Boot-Demo" target="_blank">View on GitHub →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AI-Driven Energy Efficiency Optimization</h3>
+                    <p>Machine learning solution for analyzing and predicting building energy consumption patterns.</p>
+                    <ul>
+                        <li>Analyzed dataset of 500+ building energy records using Python</li>
+                        <li>Implemented and compared 5 regression models for prediction accuracy</li>
+                        <li>Achieved R² > 0.95 using polynomial regression for heating/cooling loads</li>
+                        <li>Applied data preprocessing and feature engineering techniques</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">pandas</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>IoT Smart Door System</h3>
+                    <p>Hardware-software integration project demonstrating IoT capabilities and mobile development.</p>
+                    <ul>
+                        <li>Designed IoT-enabled smart door system with Arduino and Bluetooth</li>
+                        <li>Developed Android app for real-time monitoring and notifications</li>
+                        <li>Implemented Python backend for device communication</li>
+                        <li>Documented in IEEE-format technical paper for publication</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Bluetooth</span>
+                        <span class="tech-tag">IoT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>Software Engineer (Placement)</h3>
+                    <p class="company">IDBS, UK | Sept 2023 - Aug 2024</p>
+                    <ul>
+                        <li>Optimized CI/CD pipelines using Jenkins and Terraform, reducing deployment time by 40%</li>
+                        <li>Improved Snowflake query performance by 50% through materialized view implementation</li>
+                        <li>Increased unit test coverage from 45% to 75% using JUnit and Mockito</li>
+                        <li>Enhanced AWS DynamoDB operations for data processing workflows</li>
+                        <li>Collaborated on Tableau dashboards and analytics pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p class="company">IFS R&D International, Sri Lanka | Mar 2022 - Sept 2022</p>
+                    <ul>
+                        <li>Contributed to ERP product modules using proprietary frameworks</li>
+                        <li>Performed database optimization across the full software lifecycle</li>
+                        <li>Left position to pursue MSc Computing in UK</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Software Engineer</h3>
+                    <p class="company">Kapruka.com, Sri Lanka | Dec 2020 - Mar 2022</p>
+                    <ul>
+                        <li>Sole mobile developer: built delivery management Android app from scratch</li>
+                        <li>Architected route optimization algorithm reducing delivery time by 25%</li>
+                        <li>Integrated Firebase Cloud Messaging for real-time notifications to 100+ drivers</li>
+                        <li>Successfully deployed to Google Play Store</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Associate Software Engineer</h3>
+                    <p class="company">Epic Lanka, Sri Lanka | Mar 2019 - Sept 2020</p>
+                    <ul>
+                        <li>Developed mobile apps for fintech services including QR payment systems</li>
+                        <li>Integrated front-end and back-end components for banking applications</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cert-box">
+                <h3>🏆 AWS Certified Cloud Practitioner</h3>
+                <p style="margin-top: 10px; font-size: 1.1em;">Earned October 2025</p>
+            </div>
+        </section>
     </div>
 
-    <div class="project">
-        <h3><a href="https://github.com/Dilangi/northampton_travels-web_config">Project 2: Northampton_Travels (Responsive Web App using HTML, JS, CSS, and PHP)</a></h3>
-        <p>This project is the web application counterpart to Project 1. The application was developed with similar interfaces and features for a consistent user experience.</p>
-        <img src="./img/P2.png" alt="Northampton Travels Web App Screenshot">
-    </div>
-
-    <div class="project">
-        <h3><a href="https://github.com/Dilangi/PropertyRental">Project 3: Property Rental Agency Management Application (Standalone Application using JavaFX)</a></h3>
-        <p>This application is designed for rental agents to manage the rental process. The system was developed using the agile approach and adheres to the MVC architecture for better readability.</p>
-        <img src="./img/P3.png" alt="Property Rental Agency Management Application Screenshot">
-    </div>
-
-    <div class="project">
-        <h3><a href="https://github.com/Dilangi/TicketMe">Project 4: TicketME (Mobile App using Ionic, AngularJS, Firebase, HTML, CSS, JS)</a></h3>
-        <p>TicketME is a mobile app designed to facilitate the purchase of travel passes through QR codes, eliminating the need to visit a railway station to buy a ticket.</p>
-    </div>
-
-    <h2>Technical Knowledge Sharing</h2>
-    <p>Explore my blog where I share insights and experiences to help others grow in their technical journey. Dive into topics like software development, coding best practices, and problem-solving techniques.</p>
-    <a href="https://tamtech250758372.wordpress.com/" target="_blank" style="display: inline-block; padding: 10px 20px; background-color: #FFC300; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Visit Technical Knowledge Sharing</a>
-
-</section>
-
-<footer>
-    <p>&copy; 2024 Dilangi Thilakarathna - Connect with me on <a href="https://www.linkedin.com/in/dilangi-thilakarathne">LinkedIn</a></p>
-</footer>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dilangi Thilakarathna. Based in Bristol, UK.</p>
+            <p style="margin-top: 10px;">Open to Backend & Cloud Engineering opportunities</p>
+        </div>
+    </footer>
 </body>
 </html>
