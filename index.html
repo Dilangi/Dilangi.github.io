@@ -85,49 +85,51 @@
             margin: 0 auto;
             font-size: 1.1em;
             line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
         }
-        
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .skill-category {
             padding: 25px;
             background: #f8f9fa;
             border-radius: 10px;
             border-left: 4px solid #667eea;
         }
-        
+
         .skill-category h3 {
             color: #667eea;
             margin-bottom: 15px;
             font-size: 1.3em;
         }
-        
+
         .skill-category ul {
             list-style: none;
         }
-        
+
         .skill-category li {
             padding: 8px 0;
             color: #555;
         }
-        
+
         .skill-category li:before {
             content: "▹ ";
             color: #667eea;
             font-weight: bold;
         }
-        
+
         .projects-grid {
             display: grid;
             gap: 30px;
             margin-top: 40px;
         }
-        
+
         .project-card {
             background: #f8f9fa;
             padding: 30px;
@@ -135,35 +137,35 @@
             border-left: 4px solid #764ba2;
             transition: transform 0.3s;
         }
-        
+
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
-        
+
         .project-card h3 {
             color: #764ba2;
             margin-bottom: 15px;
             font-size: 1.5em;
         }
-        
+
         .project-card ul {
             margin: 15px 0;
             padding-left: 20px;
         }
-        
+
         .project-card li {
             margin: 8px 0;
             color: #555;
         }
-        
+
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 20px;
         }
-        
+
         .tech-tag {
             background: #667eea;
             color: white;
@@ -171,29 +173,152 @@
             border-radius: 15px;
             font-size: 0.9em;
         }
-        
+
         .project-links {
             margin-top: 20px;
             display: flex;
             gap: 15px;
+            flex-wrap: wrap;
         }
-        
+
         .project-links a {
             color: #667eea;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
+            padding: 8px 20px;
+            border: 2px solid #667eea;
+            border-radius: 20px;
         }
-        
+
         .project-links a:hover {
-            color: #764ba2;
+            background: #667eea;
+            color: white;
         }
-        
+
+        /* Deployment Evidence Styles */
+        .deployment-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .deployment-notice strong {
+            color: #856404;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .evidence-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #e0e0e0;
+        }
+
+        .evidence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+
+        .evidence-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .evidence-content {
+            padding: 20px;
+        }
+
+        .evidence-content h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .evidence-content p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .evidence-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .subsection-title {
+            font-size: 1.6em;
+            color: #764ba2;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #764ba2;
+        }
+
+        /* Modal for images */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            padding: 20px;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            animation: zoom 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0.8)}
+            to {transform: scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close:hover {
+            color: #667eea;
+        }
+
         .experience-timeline {
             max-width: 900px;
             margin: 40px auto;
         }
-        
+
         .experience-item {
             padding: 25px;
             background: #f8f9fa;
@@ -201,29 +326,29 @@
             border-radius: 10px;
             border-left: 4px solid #667eea;
         }
-        
+
         .experience-item h3 {
             color: #667eea;
             font-size: 1.4em;
             margin-bottom: 5px;
         }
-        
+
         .experience-item .company {
             color: #764ba2;
             font-weight: 600;
             margin-bottom: 10px;
         }
-        
+
         .experience-item ul {
             margin-top: 15px;
             padding-left: 20px;
         }
-        
+
         .experience-item li {
             margin: 8px 0;
             color: #555;
         }
-        
+
         .cert-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -232,12 +357,12 @@
             text-align: center;
             margin-top: 30px;
         }
-        
+
         .cert-box h3 {
             font-size: 1.8em;
             margin-bottom: 10px;
         }
-        
+
         footer {
             background: #2d3748;
             color: white;
@@ -245,226 +370,361 @@
             padding: 30px 0;
             margin-top: 60px;
         }
-        
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2em;
             }
-            
+
             header p {
                 font-size: 1.1em;
             }
-            
-            .skills-grid {
+
+            .skills-grid, .evidence-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .close {
+                top: 10px;
+                right: 20px;
+                font-size: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Dilangi Thilakarathna</h1>
-            <p>Software Engineer | Java • Spring Boot • AWS • Cloud</p>
-            <div class="links">
-                <a href="https://www.linkedin.com/in/dilangi-thilakarathne" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Dilangi" target="_blank">GitHub</a>
-                <a href="mailto:dilangithilakarathne@gmail.com">Email Me</a>
-                <a href="Dilangi_Thilakarathna_CV.pdf" target="_blank">Download CV</a>
-            </div>
-        </div>
-    </header>
-
+<header>
     <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>I'm a Software Engineer with 3+ years of professional experience in backend development, mobile applications, and cloud infrastructure. I hold an MSc in Computing with Distinction from the University of Northampton, where I completed a 12-month industry placement working with AWS, CI/CD pipelines, and data analytics.</p>
-                
-                <p style="margin-top: 20px;">My expertise spans Java/Spring Boot development, RESTful API design, and cloud technologies. I'm passionate about building scalable, secure backend systems and continuously expanding my technical skills. Recently earned AWS Certified Cloud Practitioner certification and actively developing microservices projects.</p>
-                
-                <p style="margin-top: 20px;">Currently based in Bristol, UK, and seeking opportunities in backend or cloud engineering roles where I can contribute to innovative teams building modern software solutions.</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Backend & Languages</h3>
-                    <ul>
-                        <li>Java & Spring Boot</li>
-                        <li>RESTful APIs</li>
-                        <li>Microservices</li>
-                        <li>Node.js</li>
-                        <li>Python</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <ul>
-                        <li>AWS (EC2, S3, RDS, Lambda, DynamoDB)</li>
-                        <li>Docker & Kubernetes</li>
-                        <li>CI/CD (Jenkins, GitHub Actions)</li>
-                        <li>Terraform</li>
-                        <li>CloudWatch</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>DynamoDB</li>
-                        <li>SQLite</li>
-                        <li>Firebase</li>
-                        <li>Snowflake</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Development Practices</h3>
-                    <ul>
-                        <li>OOP & Design Patterns</li>
-                        <li>Test-Driven Development</li>
-                        <li>Unit Testing (JUnit, Mockito)</li>
-                        <li>Agile Methodologies</li>
-                        <li>Code Review</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Spring Boot Microservices API with Authentication</h3>
-                    <p>A production-ready RESTful API demonstrating secure user authentication and comprehensive CRUD operations.</p>
-                    <ul>
-                        <li>Implemented JWT-based authentication with bearer token validation</li>
-                        <li>Built complete user management system with signup, login, and CRUD operations</li>
-                        <li>Integrated MySQL database with proper entity relationships</li>
-                        <li>Exception handling for authentication flows and error responses</li>
-                        <li>Unit Test Coverage</li>
-                        <li>Ongoing: Role-based access control and comprehensive test coverage</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Java 25</span>
-                        <span class="tech-tag">Spring Boot</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">JWT</span>
-                        <span class="tech-tag">REST API</span>
-                        <span class="tech-tag">Junit</span>
-                        <span class="tech-tag">Mockito</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Dilangi/Spring-Boot-Demo" target="_blank">View on GitHub →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>AI-Driven Energy Efficiency Optimization</h3>
-                    <p>Machine learning solution for analyzing and predicting building energy consumption patterns.</p>
-                    <ul>
-                        <li>Analyzed dataset of 500+ building energy records using Python</li>
-                        <li>Implemented and compared 5 regression models for prediction accuracy</li>
-                        <li>Achieved R² > 0.95 using polynomial regression for heating/cooling loads</li>
-                        <li>Applied data preprocessing and feature engineering techniques</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">scikit-learn</span>
-                        <span class="tech-tag">pandas</span>
-                        <span class="tech-tag">Machine Learning</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/file/d/16no3fyXlk-bnTwLwKekV6KTsgdQt1APl/view?usp=sharing" target="_blank">View on Google Drive →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>IoT Smart Door System</h3>
-                    <p>Hardware-software integration project demonstrating IoT capabilities and mobile development.</p>
-                    <ul>
-                        <li>Designed IoT-enabled smart door system with Arduino and Bluetooth</li>
-                        <li>Developed Android app for real-time monitoring and notifications</li>
-                        <li>Implemented Python backend for device communication</li>
-                        <li>Documented in IEEE-format technical paper for publication</li>
-                    </ul>
-                    <div class="project-tech">
-                        <span class="tech-tag">Arduino</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Android</span>
-                        <span class="tech-tag">Bluetooth</span>
-                        <span class="tech-tag">IoT</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/file/d/1Djbg6LPPTOhGgImaJdhUSNLrieWPKg9I/view" target="_blank">View on Google Drive →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <h2>Professional Experience</h2>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <h3>Software Engineer (Placement)</h3>
-                    <p class="company">IDBS, UK | Sept 2023 - Aug 2024</p>
-                    <ul>
-                        <li>Optimized CI/CD pipelines using Jenkins and Terraform, reducing deployment time by 40%</li>
-                        <li>Improved Snowflake query performance by 50% through materialized view implementation</li>
-                        <li>Increased unit test coverage from 45% to 75% using JUnit and Mockito</li>
-                        <li>Enhanced AWS DynamoDB operations for data processing workflows</li>
-                        <li>Collaborated on Tableau dashboards and analytics pipelines</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Software Engineer</h3>
-                    <p class="company">IFS R&D International, Sri Lanka | Mar 2022 - Sept 2022</p>
-                    <ul>
-                        <li>Contributed to ERP product modules using proprietary frameworks</li>
-                        <li>Performed database optimization across the full software lifecycle</li>
-                        <li>Left position to pursue MSc Computing in UK</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Software Engineer</h3>
-                    <p class="company">Kapruka.com, Sri Lanka | Dec 2020 - Mar 2022</p>
-                    <ul>
-                        <li>Sole mobile developer: built delivery management Android app from scratch</li>
-                        <li>Architected route optimization algorithm reducing delivery time by 25%</li>
-                        <li>Integrated Firebase Cloud Messaging for real-time notifications to 100+ drivers</li>
-                        <li>Successfully deployed to Google Play Store</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <h3>Associate Software Engineer</h3>
-                    <p class="company">Epic Lanka, Sri Lanka | Mar 2019 - Sept 2020</p>
-                    <ul>
-                        <li>Developed mobile apps for fintech services including QR payment systems</li>
-                        <li>Integrated front-end and back-end components for banking applications</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="cert-box">
-                <h3>🏆 AWS Certified Cloud Practitioner</h3>
-                <p style="margin-top: 10px; font-size: 1.1em;">Earned October 2025</p>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Dilangi Thilakarathna. Based in Bristol, UK.</p>
-            <p style="margin-top: 10px;">Open to Backend & Cloud Engineering opportunities</p>
+        <h1>Dilangi Thilakarathna</h1>
+        <p>Software Engineer | Java • Spring Boot • AWS • Cloud</p>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/dilangi-thilakarathne" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Dilangi" target="_blank">GitHub</a>
+            <a href="mailto:dilangithilakarathne@gmail.com">Email Me</a>
+            <a href="Dilangi_Thilakarathna_CV.pdf" target="_blank">Download CV</a>
         </div>
-    </footer>
+    </div>
+</header>
+
+<div class="container">
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>I'm a Software Engineer with 3+ years of professional experience in backend development, mobile applications, and cloud infrastructure. I hold an MSc in Computing with Distinction from the University of Northampton, where I completed a 12-month industry placement working with AWS, CI/CD pipelines, and data analytics.</p>
+
+            <p style="margin-top: 20px;">My expertise spans Java/Spring Boot development, RESTful API design, and cloud technologies. I'm passionate about building scalable, secure backend systems and continuously expanding my technical skills. Recently earned AWS Certified Cloud Practitioner certification and actively developing microservices projects.</p>
+
+            <p style="margin-top: 20px;">Currently based in Bristol, UK, and seeking opportunities in Java backend or software engineering roles where I can contribute to innovative teams building robust, scalable applications.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Backend & Languages</h3>
+                <ul>
+                    <li>Java & Spring Boot</li>
+                    <li>RESTful APIs</li>
+                    <li>Microservices</li>
+                    <li>Node.js</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Cloud & DevOps</h3>
+                <ul>
+                    <li>AWS (EC2, S3, RDS, Lambda, DynamoDB)</li>
+                    <li>Docker & Kubernetes</li>
+                    <li>CI/CD (Jenkins, GitHub Actions)</li>
+                    <li>Terraform</li>
+                    <li>CloudWatch</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Databases</h3>
+                <ul>
+                    <li>MySQL</li>
+                    <li>DynamoDB</li>
+                    <li>SQLite</li>
+                    <li>Firebase</li>
+                    <li>Snowflake</li>
+                </ul>
+            </div>
+
+            <div class="skill-category">
+                <h3>Development Practices</h3>
+                <ul>
+                    <li>OOP & Design Patterns</li>
+                    <li>Test-Driven Development</li>
+                    <li>Unit Testing (JUnit, Mockito)</li>
+                    <li>Agile Methodologies</li>
+                    <li>Code Review</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Spring Boot Microservices with AWS Deployment | 2025</h3>
+                <p>A production-ready REST API with JWT authentication deployed to AWS EC2 and RDS MySQL. Features secure user management, comprehensive testing, and cloud-native architecture.</p>
+
+                <div class="deployment-notice">
+                    <strong>⚠️ Deployment Status:</strong> AWS instance currently offline to minimize hosting costs. Comprehensive deployment evidence and screenshots available below. Demo can be restarted for technical interviews upon request.
+                </div>
+
+                <ul>
+                    <li>Designed and deployed production-grade RESTful API with JWT authentication to AWS</li>
+                    <li>Implemented secure user authentication system using Spring Security and BCrypt</li>
+                    <li>Architected cloud-native deployment: AWS EC2 compute, RDS MySQL database, VPC security</li>
+                    <li>Built CRUD operations with proper error handling and input validation</li>
+                    <li>Unit test coverage for authentication service using JUnit and Mockito</li>
+                </ul>
+
+                <div class="project-tech">
+                    <span class="tech-tag">Java 25</span>
+                    <span class="tech-tag">Spring Boot 3.x</span>
+                    <span class="tech-tag">Spring Security</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">AWS EC2</span>
+                    <span class="tech-tag">AWS RDS</span>
+                    <span class="tech-tag">JWT</span>
+                    <span class="tech-tag">JUnit & Mockito</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/Dilangi/Spring-Boot-Demo" target="_blank">📂 GitHub Repository</a>
+                    <a href="#deployment-evidence">📸 View Deployment Evidence</a>
+                </div>
+
+                <!-- Deployment Evidence Section -->
+                <div id="deployment-evidence" style="margin-top: 40px;">
+                    <h3 class="subsection-title">Deployment Evidence & Testing</h3>
+
+                    <p style="margin: 20px 0; color: #666; line-height: 1.8;">
+                        Below is comprehensive evidence of successful AWS deployment including API endpoint testing, infrastructure setup, and application logs. All screenshots captured during production deployment to AWS EC2 and RDS MySQL.
+                    </p>
+
+                    <!-- API Testing Evidence -->
+                    <h4 style="color: #667eea; margin: 30px 0 15px 0; font-size: 1.3em;">✅ API Endpoint Testing (Postman)</h4>
+                    <div class="evidence-grid">
+                        <div class="evidence-card">
+                            <img src="img/SBD_signup_API.png" alt="Signup API Success" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>Signup Endpoint</h4>
+                                <p>Creating new user with encrypted password storage.</p>
+                                <span class="evidence-tag">POST /api/v1/auth/register</span>
+                                <span class="evidence-tag">200 OK</span>
+                            </div>
+                        </div>
+
+                        <div class="evidence-card">
+                            <img src="img/SBD_login_API.png" alt="Login API Success" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>Login Endpoint</h4>
+                                <p>Returning JWT authentication token for secure session management.</p>
+                                <span class="evidence-tag">POST /api/v1/auth/login</span>
+                                <span class="evidence-tag">JWT Token</span>
+                            </div>
+                        </div>
+
+                        <div class="evidence-card">
+                            <img src="img/SBD_insert_user_API.png" alt="Add User API" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>Add User Endpoint</h4>
+                                <p>Creating new user entry with validation and proper database persistence to RDS MySQL.</p>
+                                <span class="evidence-tag">POST /api/v1/user/addUser</span>
+                                <span class="evidence-tag">Created</span>
+                            </div>
+                        </div>
+
+                        <div class="evidence-card">
+                            <img src="img/SBD_delete_user_API.png" alt="Delete User API" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>Delete User Endpoint</h4>
+                                <p>Successful user deletion with proper authorization and database transaction handling.</p>
+                                <span class="evidence-tag">DELETE /api/v1/user/deleteUser/{id}</span>
+                                <span class="evidence-tag">200 OK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AWS Infrastructure Evidence -->
+                    <h4 style="color: #667eea; margin: 40px 0 15px 0; font-size: 1.3em;">☁️ AWS Cloud Infrastructure</h4>
+                    <div class="evidence-grid">
+                        <div class="evidence-card">
+                            <img src="img/SBD_ec2_instance.png" alt="EC2 Instance Running" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>EC2 Instance Deployed</h4>
+                                <p>Application successfully deployed and running on AWS EC2 t3.micro instance with proper security group configuration.</p>
+                                <span class="evidence-tag">AWS EC2</span>
+                                <span class="evidence-tag">Running</span>
+                            </div>
+                        </div>
+
+                        <div class="evidence-card">
+                            <img src="img/SBD_AWS_RDS.png" alt="RDS Database Running" onclick="openModal(this.src)">
+                            <div class="evidence-content">
+                                <h4>RDS MySQL Database</h4>
+                                <p>Managed MySQL database on AWS RDS connected to EC2 application with VPC security configuration.</p>
+                                <span class="evidence-tag">AWS RDS</span>
+                                <span class="evidence-tag">MySQL 8.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #4caf50;">
+                        <p style="color: #2e7d32; margin: 0;">
+                            <strong>✅ Deployment Verified:</strong> All core endpoints tested and functional. Application successfully deployed to production AWS environment with proper cloud architecture (EC2 + RDS + VPC). Instance currently paused to minimize costs - can be restarted for live demonstrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>AI-Driven Energy Efficiency Optimization</h3>
+                <p>Machine learning solution for analyzing and predicting building energy consumption patterns.</p>
+                <ul>
+                    <li>Analyzed dataset of 500+ building energy records using Python</li>
+                    <li>Implemented and compared 5 regression models for prediction accuracy</li>
+                    <li>Achieved R² > 0.95 using polynomial regression for heating/cooling loads</li>
+                    <li>Applied data preprocessing and feature engineering techniques</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">scikit-learn</span>
+                    <span class="tech-tag">pandas</span>
+                    <span class="tech-tag">Machine Learning</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/16no3fyXlk-bnTwLwKekV6KTsgdQt1APl/view?usp=sharing" target="_blank">View Project Report</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>IoT Smart Door System</h3>
+                <p>Hardware-software integration project demonstrating IoT capabilities and mobile development.</p>
+                <ul>
+                    <li>Designed IoT-enabled smart door system with Arduino and Bluetooth</li>
+                    <li>Developed Android app for real-time monitoring and notifications</li>
+                    <li>Implemented Python backend for device communication</li>
+                    <li>Documented in IEEE-format technical paper for publication</li>
+                </ul>
+                <div class="project-tech">
+                    <span class="tech-tag">Arduino</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">Bluetooth</span>
+                    <span class="tech-tag">IoT</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1Djbg6LPPTOhGgImaJdhUSNLrieWPKg9I/view" target="_blank">View Technical Paper</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Professional Experience</h2>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <h3>Software Engineer (Placement)</h3>
+                <p class="company">IDBS, UK | Sept 2023 - Aug 2024</p>
+                <ul>
+                    <li>Optimized CI/CD pipelines using Jenkins and Terraform, reducing deployment time by 40%</li>
+                    <li>Improved Snowflake query performance by 50% through materialized view implementation</li>
+                    <li>Increased unit test coverage from 45% to 75% using JUnit and Mockito</li>
+                    <li>Enhanced AWS DynamoDB operations for data processing workflows</li>
+                    <li>Collaborated on Tableau dashboards and analytics pipelines</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Engineer</h3>
+                <p class="company">IFS R&D International, Sri Lanka | Mar 2022 - Sept 2022</p>
+                <ul>
+                    <li>Contributed to ERP product modules using proprietary frameworks</li>
+                    <li>Performed database optimization across the full software lifecycle</li>
+                    <li>Left position to pursue MSc Computing in UK</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Software Engineer</h3>
+                <p class="company">Kapruka.com, Sri Lanka | Dec 2020 - Mar 2022</p>
+                <ul>
+                    <li>Sole mobile developer: built delivery management Android app from scratch</li>
+                    <li>Architected route optimization algorithm reducing delivery time by 25%</li>
+                    <li>Integrated Firebase Cloud Messaging for real-time notifications to 100+ drivers</li>
+                    <li>Successfully deployed to Google Play Store</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Associate Software Engineer</h3>
+                <p class="company">Epic Lanka, Sri Lanka | Mar 2019 - Sept 2020</p>
+                <ul>
+                    <li>Developed mobile apps for fintech services including QR payment systems</li>
+                    <li>Integrated front-end and back-end components for banking applications</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cert-box">
+            <h3>🏆 AWS Certified Cloud Practitioner</h3>
+            <p style="margin-top: 10px; font-size: 1.1em;">Earned October 2025</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Dilangi Thilakarathna. Based in Bristol, UK.</p>
+        <p style="margin-top: 10px;">Open to Backend & Cloud Engineering opportunities</p>
+    </div>
+</footer>
+
+<!-- Modal for full-size images -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Full size screenshot">
+</div>
+
+<script>
+    function openModal(src) {
+        document.getElementById('imageModal').style.display = 'block';
+        document.getElementById('modalImage').src = src;
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
